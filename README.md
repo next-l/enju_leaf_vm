@@ -9,7 +9,6 @@ $ git clone https://github.com/next-l/enju_leaf_vm.git
 $ cd enju_leaf_vm
 $ git checkout master
 $ vagrant up
-$ vagrant reload
 ```
 
 ### 開発者向け
