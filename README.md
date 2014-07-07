@@ -1,6 +1,8 @@
 # Next-L Enju 仮想マシン
 
-## 構築手順（一般ユーザ向け）
+## 構築手順
+
+### 一般ユーザ向け
 
 ```sh
 $ git clone https://github.com/next-l/enju_leaf_vm.git
@@ -10,7 +12,7 @@ $ vagrant up
 $ vagrant reload
 ```
 
-## 構築手順（開発者向け）
+### 開発者向け
 
 ```sh
 $ git clone https://github.com/next-l/enju_leaf_vm.git
