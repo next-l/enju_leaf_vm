@@ -16,9 +16,11 @@ echo "change repository"
 sed -i -e 's/archive.ubuntu.com/jp.archive.ubuntu.com/g' /etc/apt/sources.list
  
 echo "step1 : package update and install"
+apt-get -y install software-properties-common
+add-apt-repository -y ppa:brightbox/ruby-ng
 apt-get update 
-#apt-get -y upgrade
-apt-get -y install ruby1.9.1-dev
+apt-get -y upgrade
+apt-get -y install ruby2.1-dev
 apt-get -y install git w3m vim
 apt-get -y install build-essential imagemagick openjdk-7-jre-headless
 apt-get -y install zlib1g-dev
@@ -28,7 +30,7 @@ apt-get -y install libsqlite3-dev
 #apt-get -y install postgresql libpq-dev
 #apt-get -y install mysql-server libmysqlclient-dev
 #apt-get -y install tomcat7 tomcat7-admin
-apt-get -y install nginx
+apt-get -y install nginx-full
  
 echo "step2 : install rails"
 gem install rails --version=$RAILS_VERSION --no-ri --no-rdoc --force
