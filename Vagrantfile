@@ -10,11 +10,12 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
   # please see the online documentation at vagrantup.com.
 
   # Every Vagrant virtual environment requires a box to build off of.
-  config.vm.box = "kosuke/enju_leaf_vm_ubuntu"
+  config.vm.box = "next-l/enju_leaf_vm_ubuntu"
 
-  # The url from where the 'config.vm.box' box will be fetched if it
-  # doesn't already exist on the user's system.
-  # config.vm.box_url = "http://domain.com/path/to/above.box"
+  # Disable automatic box update checking. If you disable this, then
+  # boxes will only be checked for updates when the user runs
+  # `vagrant box outdated`. This is not recommended.
+  # config.vm.box_check_update = false
 
   # Create a forwarded port mapping which allows access to a specific port
   # within the machine from a port on the host machine. In the example below,
@@ -55,27 +56,30 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
   # View the documentation for the provider you're using for more
   # information on available options.
 
+  # Enable provisioning with CFEngine. CFEngine Community packages are
+  # automatically installed. For example, configure the host as a
+  # policy server and optionally a policy file to run:
+  #
+  # config.vm.provision "cfengine" do |cf|
+  #   cf.am_policy_hub = true
+  #   # cf.run_file = "motd.cf"
+  # end
+  #
+  # You can also configure and bootstrap a client to an existing
+  # policy server:
+  #
+  # config.vm.provision "cfengine" do |cf|
+  #   cf.policy_server_address = "10.0.2.15"
+  # end
+
   # Enable provisioning with Puppet stand alone.  Puppet manifests
   # are contained in a directory path relative to this Vagrantfile.
   # You will need to create the manifests directory and a manifest in
-  # the file ubuntu/trusty64.pp in the manifests_path directory.
-  #
-  # An example Puppet manifest to provision the message of the day:
-  #
-  # # group { "puppet":
-  # #   ensure => "present",
-  # # }
-  # #
-  # # File { owner => 0, group => 0, mode => 0644 }
-  # #
-  # # file { '/etc/motd':
-  # #   content => "Welcome to your Vagrant-built virtual machine!
-  # #               Managed by Puppet.\n"
-  # # }
+  # the file default.pp in the manifests_path directory.
   #
   # config.vm.provision "puppet" do |puppet|
   #   puppet.manifests_path = "manifests"
-  #   puppet.manifest_file  = "site.pp"
+  #   puppet.manifest_file  = "default.pp"
   # end
 
   # Enable provisioning with chef solo, specifying a cookbooks path, roles
@@ -90,7 +94,7 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
   #   chef.add_role "web"
   #
   #   # You may also specify custom JSON attributes:
-  #   chef.json = { :mysql_password => "foo" }
+  #   chef.json = { mysql_password: "foo" }
   # end
 
   # Enable provisioning with chef server, specifying the chef server URL,
