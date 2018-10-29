@@ -12,7 +12,7 @@ Vagrant.configure("2") do |config|
 
   # Every Vagrant development environment requires a box. You can search for
   # boxes at https://atlas.hashicorp.com/search.
-  config.vm.box = "bento/ubuntu-16.04"
+  config.vm.box = "ubuntu/xenial64"
 
   # Disable automatic box update checking. If you disable this, then
   # boxes will only be checked for updates when the user runs
@@ -49,6 +49,7 @@ Vagrant.configure("2") do |config|
   #
   #   # Customize the amount of memory on the VM:
     vb.memory = "2048"
+    vb.customize ["modifyvm", :id, "--uartmode1", "disconnected"]
   end
   #
   # View the documentation for the provider you are using for more
@@ -68,5 +69,5 @@ Vagrant.configure("2") do |config|
   #   apt-get update
   #   apt-get install -y apache2
   # SHELL
-  config.vm.provision "shell", path: "https://gist.github.com/nabeta/f521066870964d85c3d81bfdd49a8848.txt"
+  config.vm.provision "shell", path: "https://gist.github.com/nabeta/c0958585c3b7842778157ae9ea45759d.txt"
 end
