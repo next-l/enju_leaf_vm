@@ -7,7 +7,7 @@
 ```sh
 $ git clone https://github.com/next-l/enju_leaf_vm.git
 $ cd enju_leaf_vm
-$ git checkout master
+$ git checkout 1.3
 $ vagrant up
 ```
 
@@ -16,9 +16,8 @@ $ vagrant up
 ```sh
 $ git clone https://github.com/next-l/enju_leaf_vm.git
 $ cd enju_leaf_vm
-$ git checkout development
+$ git checkout master
 $ vagrant up
-$ vagrant reload
 ```
 
 アプリケーションは http://localhost:8080 で起動します。
