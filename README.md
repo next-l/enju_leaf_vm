@@ -7,7 +7,7 @@
 ```sh
 $ git clone https://github.com/next-l/enju_leaf_vm.git
 $ cd enju_leaf_vm
-$ git checkout master
+$ git checkout 1.3
 $ vagrant up
 ```
 
@@ -16,13 +16,12 @@ $ vagrant up
 ```sh
 $ git clone https://github.com/next-l/enju_leaf_vm.git
 $ cd enju_leaf_vm
-$ git checkout development
+$ git checkout master
 $ vagrant up
-$ vagrant reload
 ```
 
 アプリケーションは http://localhost:8080 で起動します。
 
 ## 製作者・貢献者 (Authors and contributors)
 * [TANABE, Kosuke](https://github.com/nabeta)
-* [Project Next-L](http://www.next-l.jp)
+* [Project Next-L](https://www.next-l.jp)
